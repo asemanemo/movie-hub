@@ -1,5 +1,6 @@
 import { Card, CardBody, Heading, Image } from "@chakra-ui/react";
 import { Movies } from "../hooks/useMovies";
+import { imageUrl } from "../services/api-client";
 
 interface Props {
   movie: Movies;
@@ -7,10 +8,10 @@ interface Props {
 
 const MovieCard = ({ movie }: Props) => {
   return (
-    <Card>
-      <Image src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />
+    <Card borderRadius={10} overflow="hidden">
+      <Image src={imageUrl + movie.poster_path} />
       <CardBody>
-        <Heading> {movie.title}</Heading>
+        <Heading fontSize="2xl"> {movie.title}</Heading>
       </CardBody>
     </Card>
   );
