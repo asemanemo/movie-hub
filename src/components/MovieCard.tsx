@@ -1,6 +1,7 @@
-import { Card, CardBody, Heading, Image } from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, HStack } from "@chakra-ui/react";
 import { Movies } from "../hooks/useMovies";
 import { imageUrl } from "../services/api-client";
+import Rating from "./Rating";
 
 interface Props {
   movie: Movies;
@@ -11,7 +12,10 @@ const MovieCard = ({ movie }: Props) => {
     <Card borderRadius={10} overflow="hidden">
       <Image src={imageUrl + movie.poster_path} />
       <CardBody>
-        <Heading fontSize="2xl"> {movie.title}</Heading>
+        <HStack justifyContent="space-between">
+          <Heading fontSize="2xl"> {movie.title}</Heading>
+          <Rating rating={movie.vote_average} />
+        </HStack>
       </CardBody>
     </Card>
   );
