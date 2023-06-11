@@ -3,15 +3,9 @@ import useMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
 import MovieCardSkeleton from "./MovieCardSkeleton";
 import MovieCardContainer from "./MovieCardContainer";
-import useCategory, { MoviesP } from "../hooks/useCategory";
 
-interface Props {
-  selectedCategory: MoviesP | null;
-}
-
-const MovieGrid = ({ selectedCategory }: Props) => {
+const MovieGrid = () => {
   const { movies, error, isLoading } = useMovies();
-  const { moviesP, errorP, isLoadingP } = useCategory(selectedCategory);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
@@ -19,7 +13,7 @@ const MovieGrid = ({ selectedCategory }: Props) => {
       {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={8}
+        spacing={2}
         paddingTop={7}
       >
         {isLoading &&
