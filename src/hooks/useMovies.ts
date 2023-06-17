@@ -12,7 +12,7 @@ export interface Movies {
 
   }
   
-  interface FetchMoviesResponse {
+  export interface FetchMoviesResponse {
     results: Movies[];
   }
 
