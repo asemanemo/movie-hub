@@ -1,7 +1,7 @@
 import { Grid, GridItem, Show, Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import MovieGrid from "./components/MovieGrid";
-import CategoryList from "./components/CategoryList";
+import CategoryPopular from "./components/CategoryPopular";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <Box justifyContent="space-between" padding={3}>
         <Show above="lg">
           <GridItem area="aside"></GridItem>
-          <CategoryList />
+          <CategoryPopular />
         </Show>
       </Box>
 

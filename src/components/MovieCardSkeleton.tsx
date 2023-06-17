@@ -3,7 +3,7 @@ import { Card, CardBody, Skeleton, SkeletonText } from "@chakra-ui/react";
 const MovieCardSkeleton = () => {
   return (
     <Card borderRadius={10} overflow="hidden">
-      <Skeleton height="50vh" />
+      <Skeleton height="70vh" />
       <CardBody>
         <SkeletonText />
       </CardBody>
